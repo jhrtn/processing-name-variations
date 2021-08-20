@@ -1,8 +1,6 @@
 const processingColours = ['#0a47ff', '#171d9a', '#709dff'];
 
 export default function sketch(p5, w = 600, h = 600) {
-  let rotation = 0;
-
   let bubbles = [];
   let iteration = 0;
 
