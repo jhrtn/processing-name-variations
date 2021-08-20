@@ -67,13 +67,12 @@ const Inner = styled.div`
   button {
     outline: none;
     border: none;
-    background-color: #07393C;
+    background-color: #0A090C;
     color: #F0EDEE;
     padding: 12px 20px;
     border-radius: 2px;
-
     :hover {
-      transform: scale(1.01);
+      background-color: #002642;
     }
   }
 `;
