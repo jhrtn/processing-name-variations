@@ -35,6 +35,11 @@ function App() {
       <RegenContainer>
          {numRegens > 0 && <p>You've generated {numRegens} variation{numRegens > 1 && 's'}!</p>}
       </RegenContainer>
+      <CodeLink>
+        <a href="https://github.com/jhrtn/processing-name-variations/blob/main/src/App.js" target="_blank" rel="noreferrer">
+            source
+        </a>
+      </CodeLink>
     </Container>
   );
 }
@@ -82,4 +87,15 @@ const RegenContainer = styled.div`
   bottom: 20px;
   left: 20px;
   font-size: 12px;
+`;
+
+const CodeLink = styled.div`
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 12px;
+  
+  a {
+    color: #0A090C;
+  }
 `;
