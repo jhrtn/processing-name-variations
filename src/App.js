@@ -33,7 +33,7 @@ function App() {
         <button onClick={regenerateText}>regenerate!</button>
       </Inner>
       <RegenContainer>
-        <p>You've generated {numRegens} variations!</p>
+         {numRegens > 0 && <p>You've generated {numRegens} variations!</p>}
       </RegenContainer>
     </Container>
   );
