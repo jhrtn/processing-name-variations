@@ -45,6 +45,7 @@ function App() {
         <h1>{processing}</h1>
         <div style={{ display: 'flex' }}>
           <input
+            style={{ display: 'none' }}
             type="range"
             min={0}
             max={1}
