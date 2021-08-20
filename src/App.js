@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import P5Wrapper from 'react-p5-wrapper';
+
+import sketch from './sketch';
 
 const letters = {
   P: ['?'],
@@ -74,7 +77,7 @@ function App() {
         </a>
       </CodeLink>
       <SketchContainer>
-        <P5Wrapper sketch={sketch} />
+        <P5Wrapper sketch={sketch} iteration={numRegens} />
       </SketchContainer>
     </Container>
   );
