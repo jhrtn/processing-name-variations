@@ -67,6 +67,7 @@ const Inner = styled.div`
   h1 {
     font-variant-numeric: tabular-nums;
     font-family: monospace;
+    font-weight: 100;
   }
 
   button {
