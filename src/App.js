@@ -66,7 +66,7 @@ function App() {
       </RegenContainer>
       <CodeLink>
         <a
-          href="https://github.com/jhrtn/processing-name-variations/blob/main/src/App.js"
+          href="https://github.com/jhrtn/processing-name-variations/blob/main/src"
           target="_blank"
           rel="noreferrer"
         >
