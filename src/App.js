@@ -108,7 +108,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(20px + 3vmin);
 `;
 
 const Inner = styled.div`
@@ -123,6 +122,7 @@ const Inner = styled.div`
     font-family: 'Cutive Mono', monospace;
     font-weight: 200;
     user-select: none;
+    font-size: calc(16px + 8vmin) !important;
   }
 `;
 
