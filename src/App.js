@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import P5Wrapper from 'react-p5-wrapper';
 
 import sketch from './sketch';
+import useWindowSize from './lib/useWindowSize';
+
 const theme = {
   colours: {
     light: '#f0edee',
@@ -28,6 +30,7 @@ function App() {
   const [processing, setProcessing] = useState('Processing');
   const [numRegens, setNumRegens] = useState(0);
   const [regenFac, setRegenFac] = useState(0.4);
+  const size = useWindowSize();
 
   const regenerateText = () => {
     const res = Array.from('Processing').map((letter) => {
@@ -49,43 +52,51 @@ function App() {
   }, [regenFac]);
 
   return (
-    <Container>
-      <Inner>
-        <h1>{processing}</h1>
-        <div style={{ display: 'flex' }}>
-          <input
-            style={{ display: 'none' }}
-            type="range"
-            min={0}
-            max={1}
-            step={0.01}
-            onChange={(e) => setRegenFac(e.target.value)}
-          />
-          <button onClick={regenerateText}>
-            <Arrow />
-          </button>
-        </div>
-      </Inner>
-      <RegenContainer>
-        {numRegens > 0 && (
+    <>
+      <Container>
+        <Inner>
+          <h1>{processing}</h1>
+          <div style={{ display: 'flex' }}>
+            <input
+              style={{ display: 'none' }}
+              type="range"
+              min={0}
+              max={1}
+              step={0.01}
+              onChange={(e) => setRegenFac(e.target.value)}
+            />
+            <button onClick={regenerateText}>
+              <Arrow />
+            </button>
+          </div>
+        </Inner>
+
+        <RegenContainer>
+          {numRegens > 0 && (
+            <p>
+              You have generated {numRegens} variation{numRegens > 1 && 's'}!
+            </p>
+          )}
+        </RegenContainer>
+
+        <CodeLink>
           <p>
-            You have generated {numRegens} variation{numRegens > 1 && 's'}!
+            <a
+              href="https://github.com/jhrtn/processing-name-variations/blob/main/src"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {'</>'}
+            </a>
           </p>
-        )}
-      </RegenContainer>
-      <CodeLink>
-        <a
-          href="https://github.com/jhrtn/processing-name-variations/blob/main/src"
-          target="_blank"
-          rel="noreferrer"
-        >
-          source
-        </a>
-      </CodeLink>
-      <SketchContainer>
-        <P5Wrapper sketch={sketch} iteration={numRegens} />
-      </SketchContainer>
-    </Container>
+        </CodeLink>
+
+
+        <SketchContainer>
+          <P5Wrapper sketch={sketch} iteration={numRegens} windowSize={size} />
+        </SketchContainer>
+      </Container>
+    </>
   );
 }
 
