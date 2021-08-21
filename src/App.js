@@ -114,7 +114,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(20px + 2vmin);
+  font-size: calc(20px + 3vmin);
 `;
 
 const Inner = styled.div`
@@ -145,6 +145,9 @@ const Inner = styled.div`
       background-color: #002642;
       color: ${theme.colours.light};
     }
+    font-family: 'Cutive Mono', monospace;
+    font-weight: 200;
+    user-select: none;
   }
 `;
 
@@ -152,7 +155,7 @@ const RegenContainer = styled.div`
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-size: 12px;
+  font-size: 14px;
   z-index: 2;
 `;
 
@@ -160,7 +163,7 @@ const CodeLink = styled.div`
   position: absolute;
   bottom: 20px;
   right: 20px;
-  font-size: 12px;
+  font-size: 14px;
   z-index: 2;
 
   a {
