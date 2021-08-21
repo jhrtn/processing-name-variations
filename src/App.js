@@ -91,6 +91,9 @@ function App() {
           </p>
         </CodeLink>
 
+        <InfoButton>
+          <InfoIcon />
+        </InfoButton>
 
         <SketchContainer>
           <P5Wrapper sketch={sketch} iteration={numRegens} windowSize={size} />
@@ -150,6 +153,7 @@ const RegenContainer = styled.div`
   bottom: 20px;
   left: 20px;
   font-size: 12px;
+  z-index: 2;
 `;
 
 const CodeLink = styled.div`
@@ -157,6 +161,7 @@ const CodeLink = styled.div`
   bottom: 20px;
   right: 20px;
   font-size: 12px;
+  z-index: 2;
 
   a {
     color: ${theme.colours.dark};
@@ -166,6 +171,15 @@ const CodeLink = styled.div`
 const SketchContainer = styled.div`
   position: absolute;
   z-index: 1;
+`;
+
+const InfoButton = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  z-index: 2;
+  color: ${theme.colours.dark};
 `;
 
 const Arrow = () => (
@@ -183,6 +197,25 @@ const Arrow = () => (
       strokeLinejoin="round"
       strokeWidth={2}
       d="M17 8l4 4m0 0l-4 4m4-4H3"
+    />
+  </svg>
+);
+
+const InfoIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    width="24px"
+    height="24px"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
     />
   </svg>
 );
