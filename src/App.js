@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import P5Wrapper from 'react-p5-wrapper';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import sketch from './p5/sketch';
 import useWindowSize from './lib/useWindowSize';
+import InfoDialog from './components/InfoDialog';
 
-const theme = {
+export const theme = {
   colours: {
     light: '#f0edee',
     dark: '#0a090c',
+    accent: '#002642',
   },
 };
 
@@ -30,6 +33,7 @@ function App() {
   const [processingName, setProcessingName] = useState('Processing');
   const [numRegens, setNumRegens] = useState(0);
   const [regenFac, setRegenFac] = useState(0.4);
+  const [showInfo, setShowInfo] = useState(false);
   const size = useWindowSize();
 
   const regenerateText = () => {
@@ -91,9 +95,11 @@ function App() {
           </p>
         </CodeLink>
 
-        <InfoButton>
-          <InfoIcon />
+        <InfoButton onClick={() => setShowInfo(!showInfo)}>
+          <InfoIcon open={showInfo} />
         </InfoButton>
+
+        <AnimatePresence>{showInfo && <InfoDialog />}</AnimatePresence>
 
         <SketchContainer>
           <P5Wrapper sketch={sketch} iteration={numRegens} windowSize={size} />
