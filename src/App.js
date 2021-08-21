@@ -60,7 +60,11 @@ function App() {
       <Container>
         <Inner>
           <h1>{processingName}</h1>
-          <div style={{ display: 'flex' }}>
+          <RandomButton
+            style={{ display: 'flex' }}
+            whileTap={{ scale: 0.88 }}
+            onClick={regenerateText}
+          >
             <input
               style={{ display: 'none' }}
               type="range"
@@ -69,10 +73,9 @@ function App() {
               step={0.01}
               onChange={(e) => setRegenFac(e.target.value)}
             />
-            <RandomButton whileTap={{ scale: 0.88 }} onClick={regenerateText}>
-              <Dice />
-            </RandomButton>
-          </div>
+
+            <Dice />
+          </RandomButton>
         </Inner>
 
         <RegenContainer>
