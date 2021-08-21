@@ -74,14 +74,14 @@ export class Bubble {
   }
 
   applyForce(force) {
-    let f = this.p5.constructor.Vector.div(force, this.mass);
+    const f = this.p5.constructor.Vector.div(force, this.mass);
     this.acc.add(f);
   }
 
   setRandomPos(parentPos) {
     this.pos.x = this.p5.random(parentPos.x - 30, parentPos.x + 30);
     this.pos.y = this.p5.random(parentPos.y - 30, parentPos.y + 30);
-    let dist = this.p5.constructor.Vector.sub(this.pos, parentPos);
+    const dist = this.p5.constructor.Vector.sub(this.pos, parentPos);
     this.vel = this.p5.constructor.Vector.normalize(dist);
   }
 }
