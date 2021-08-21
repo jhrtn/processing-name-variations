@@ -45,7 +45,7 @@ function App() {
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
-      regenerateText();
+      // regenerateText();
     }, 100);
 
     return () => clearTimeout(delayDebounceFn);
