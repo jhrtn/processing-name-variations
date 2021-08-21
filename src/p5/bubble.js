@@ -81,5 +81,7 @@ export class Bubble {
   setRandomPos(parentPos) {
     this.pos.x = this.p5.random(parentPos.x - 30, parentPos.x + 30);
     this.pos.y = this.p5.random(parentPos.y - 30, parentPos.y + 30);
+    let dist = this.p5.constructor.Vector.sub(this.pos, parentPos);
+    this.vel = this.p5.constructor.Vector.normalize(dist);
   }
 }

@@ -27,7 +27,7 @@ const letters = {
 const flip = (prob) => Math.random() <= prob;
 
 function App() {
-  const [processing, setProcessing] = useState('Processing');
+  const [processingName, setProcessingName] = useState('Processing');
   const [numRegens, setNumRegens] = useState(0);
   const [regenFac, setRegenFac] = useState(0.4);
   const size = useWindowSize();
@@ -40,7 +40,7 @@ function App() {
         : letter;
     });
     setNumRegens(numRegens + 1);
-    setProcessing(res);
+    setProcessingName(res);
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function App() {
     <>
       <Container>
         <Inner>
-          <h1>{processing}</h1>
+          <h1>{processingName}</h1>
           <div style={{ display: 'flex' }}>
             <input
               style={{ display: 'none' }}
