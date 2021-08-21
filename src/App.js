@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import P5Wrapper from 'react-p5-wrapper';
 
 import sketch from './sketch';
+const theme = {
+  colours: {
+    light: '#f0edee',
+    dark: '#0a090c',
+  },
+};
 
 const letters = {
   P: ['?'],
@@ -86,8 +92,8 @@ function App() {
 export default App;
 
 const Container = styled.div`
-  background-color: #f0edee;
-  color: #0a090c;
+  background-color: ${theme.colours.light};
+  color: ${theme.colours.dark};
 
   min-height: 100vh;
   display: flex;
@@ -112,8 +118,8 @@ const Inner = styled.div`
 
   button {
     outline: none;
-    border: 2px solid #0a090c;
-    color: #0a090c;
+    border: 2px solid ${theme.colours.dark};
+    color: ${theme.colours.dark};
     /* padding: 12px 20px; */
     height: 40px;
     width: 40px;
@@ -123,7 +129,7 @@ const Inner = styled.div`
     align-items: center;
     :hover {
       background-color: #002642;
-      color: #f0edee;
+      color: ${theme.colours.light};
     }
   }
 `;
@@ -142,7 +148,7 @@ const CodeLink = styled.div`
   font-size: 12px;
 
   a {
-    color: #0a090c;
+    color: ${theme.colours.dark};
   }
 `;
 
