@@ -83,18 +83,6 @@ function App() {
           )}
         </RegenContainer>
 
-        <CodeLink>
-          <p>
-            <a
-              href="https://github.com/jhrtn/processing-name-variations/blob/main/src"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {'</>'}
-            </a>
-          </p>
-        </CodeLink>
-
         <InfoButton onClick={() => setShowInfo(!showInfo)}>
           <InfoIcon open={showInfo} />
         </InfoButton>
@@ -144,22 +132,6 @@ const RegenContainer = styled.div`
   left: 20px;
   font-size: 14px;
   z-index: 2;
-`;
-
-const CodeLink = styled.div`
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 14px;
-  z-index: 2;
-  user-select: none;
-  a {
-    color: ${theme.colours.dark};
-    text-decoration: none;
-    :hover {
-      text-decoration: underline;
-    }
-  }
 `;
 
 const SketchContainer = styled.div`

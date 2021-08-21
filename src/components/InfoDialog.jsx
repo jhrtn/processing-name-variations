@@ -54,6 +54,17 @@ const InfoDialog = () => {
           library.
         </p>
       </InfoInner>
+      <CodeLink>
+        <p>
+          <a
+            href="https://github.com/jhrtn/processing-name-variations/blob/main/src"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {'</>'}
+          </a>
+        </p>
+      </CodeLink>
     </InfoDialogContainer>
   );
 };
@@ -85,6 +96,23 @@ const InfoInner = styled(motion.div)`
     color: #8390fa;
     :hover {
       color: #b1b9fc;
+    }
+  }
+`;
+
+const CodeLink = styled.div`
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 14px;
+  z-index: 2;
+  user-select: none;
+  a {
+    color: #f0edee;
+    text-decoration: none;
+    :hover {
+      text-decoration: underline;
+      font-weight: bold;
     }
   }
 `;
