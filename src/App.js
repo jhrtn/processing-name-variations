@@ -44,7 +44,12 @@ function App() {
         : letter;
     });
     setNumRegens(numRegens + 1);
-    setProcessingName(res);
+
+    if (numRegens + 1 === 20) {
+      setProcessingName('Pro<3ssing');
+    } else {
+      setProcessingName(res);
+    }
   };
 
   useEffect(() => {
